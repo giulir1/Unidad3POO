@@ -19,6 +19,10 @@ class facultad:
 
     def __str__(self):
         return '{} {} {} {} {}'. format(self.__codigo, self.__nombre, self.__direccion, self.__localidad, self.__telefono)
+    
+    def __del__(self):
+        print('Borrando facultad y carreras...')
+        del self.__carreras
 
     def mostrarCarreraYDuracion(self):
         for i in self.__carreras:
