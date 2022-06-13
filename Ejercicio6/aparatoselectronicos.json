@@ -1,0 +1,73 @@
+{
+    "__class__": "Manejador",
+    "aparatos": [
+        {
+            "__class__": "televisor",
+            "__atributos__": {
+                "marca": "Samsung",
+                "modelo": "Smart TV",
+                "color": "Negro",
+                "pais": "Corea del Sur",
+                "precioBase": 75999.0,
+                "pantalla": "led",
+                "pulgadas": "60",
+                "definicion": "FULL HD",
+                "internet": "True"
+            }
+        },
+        {
+            "__class__": "heladera",
+            "__atributos__": {
+                "marca": "Philips",
+                "modelo": "phct290t-01",
+                "color": "Blanco",
+                "pais": "Holanda",
+                "precioBase": 64999.0,
+                "capacidad": "18",
+                "freezer": "True",
+                "ciclica": "False"
+            }
+        },
+        {
+            "__class__": "lavarropas",
+            "__atributos__": {
+                "marca": "Drean",
+                "modelo": "Next 10-12 PG 10",
+                "color": "Gris",
+                "pais": "Argentina",
+                "precioBase": 103899.0,
+                "capacidad": 10.0,
+                "velocidad": "1200",
+                "cantidadProgramas": 12,
+                "tipoCarga": "Superior"
+            }
+        },
+        {
+            "__class__": "televisor",
+            "__atributos__": {
+                "marca": "Philips",
+                "modelo": "Smart TV 43",
+                "color": "Negro",
+                "pais": "Holanda",
+                "precioBase": 54599.0,
+                "pantalla": "Plasma",
+                "pulgadas": "43",
+                "definicion": "FULL HD",
+                "internet": "False"
+            }
+        },
+        {
+            "__class__": "heladera",
+            "__atributos__": {
+                "marca": "Samsung",
+                "modelo": "S4M-H20",
+                "color": "Blanco",
+                "pais": "Argentina",
+                "precioBase": 100000.0,
+                "capacidad": "35",
+                "freezer": "True",
+                "ciclica": "True"
+            }
+        }
+    ]
+}
