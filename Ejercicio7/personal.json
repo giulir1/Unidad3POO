@@ -1,0 +1,69 @@
+{
+    "__class__": "Manejador",
+    "personal": [
+        {
+            "__class__": "Docente",
+            "__atributos__": {
+                "cuil": "27-28033514-8",
+                "apellido": "Castro",
+                "nombre": "Emiliano",
+                "sueldoBasico": 100000.0,
+                "antiguedad": 8,
+                "carrera": "Informatica",
+                "cargo": "Exclusivo",
+                "catedra": "Programacion"
+            }
+        },
+        {
+            "__class__": "DeApoyo",
+            "__atributos__": {
+                "cuil": "22-28036514-8",
+                "apellido": "Pérez",
+                "nombre": "Santiago",
+                "sueldoBasico": 57000.0,
+                "antiguedad": 5,
+                "categoria": 1
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "__atributos__": {
+                "cuil": "42-28072000-8",
+                "apellido": "Bravo",
+                "nombre": "Benjamín",
+                "sueldoBasico": 350000.0,
+                "antiguedad": 15,
+                "areaInvestigacion": "Ciencia de la computacion e inteligencia artificial",
+                "tipoInvestigacion": "Investigacion aplicada"
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "__atributos__": {
+                "cuil": "07-11036664-6",
+                "apellido": "Rocha",
+                "nombre": "Daniela",
+                "sueldoBasico": 500000.0,
+                "antiguedad": 20,
+                "areaInvestigacion": "Ciencia de la computacion e inteligencia artificial",
+                "tipoInvestigacion": "Explicativa",
+                "carrera": "Informatica",
+                "cargo": "Simple",
+                "catedra": "Inteligencia artificial",
+                "categoriaIncentivos": "IV",
+                "importeExtra": 50000.0
+            }
+        },
+        {
+            "__class__": "DeApoyo",
+            "__atributos__": {
+                "cuil": "23-15945612-12",
+                "apellido": "Martín",
+                "nombre": "Gabriel",
+                "sueldoBasico": 175000.0,
+                "antiguedad": 3,
+                "categoria": 20
+            }
+        }
+    ]
+}
