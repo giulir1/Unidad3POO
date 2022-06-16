@@ -24,9 +24,9 @@ class Investigador(Personal):
             __class__=self.__class__.__name__,
             __atributos_=dict(
                 cuil=super().getCuil(),
-                ape=super().getApellido(),
-                nom=super().getNombre(),
-                sueldo=super().getSueldoBasico(),
+                apellido=super().getApellido(),
+                nombre=super().getNombre(),
+                sueldoBasico=super().getSueldoBasico(),
                 antiguedad=super().getAntiguedad(),
                 areaInvestigacion=self.__areaInvestigacion,
                 tipoInvestigacion=self.__tipoInvestigacion

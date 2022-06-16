@@ -18,6 +18,9 @@ class Personal(object):
     def getCuil(self):
         return self.__cuil
 
+    def setBasico(self, nuevo):
+        self.__sueldoBasico = nuevo
+
     def getApellido(self):
         return self.__apellido
 

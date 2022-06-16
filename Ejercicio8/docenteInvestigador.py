@@ -20,18 +20,17 @@ class DocenteInvestigador(Docente, Investigador):
     def getImporteExtra(self):
         return self.__importeExtra
 
-    # SOBRECARGA DE OPERADORES
-    def __lt__(self, other):
-        return self.getNombre() < other.getNombre()
+    def setImporteExtra(self, nuevo):
+        self.__importeExtra = nuevo
 
     def toJSON(self):
         diccionario = dict(
             __class__=self.__class__.__name__,
             __atributos_=dict(
                 cuil=super().getCuil(),
-                ape=super().getApellido(),
-                nom=super().getNombre(),
-                sueldo=super().getSueldoBasico(),
+                apellido=super().getApellido(),
+                nombre=super().getNombre(),
+                sueldoBasico=super().getSueldoBasico(),
                 antiguedad=super().getAntiguedad(),
                 areaInvestigacion=super().getArea(),
                 tipoInvestigacion=super().getTipo(),
@@ -43,3 +42,8 @@ class DocenteInvestigador(Docente, Investigador):
             )
         )
         return diccionario
+
+    # SOBRECARGA DE OPERADORES
+    def __lt__(self, other):
+        return self.getNombre() < other.getNombre()
+

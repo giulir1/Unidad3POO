@@ -3,12 +3,16 @@ from deApoyo import DeApoyo
 from docente import Docente
 from docenteInvestigador import DocenteInvestigador
 from interfaz import Interfaz
+from IDirector import IDirector
+from ITesorero import ITesorero
 from investigador import Investigador
 from nodo import Nodo
 from personal import Personal
 
 
 @implementer(Interfaz)
+@implementer(IDirector)
+@implementer(ITesorero)
 class Manejador:
     __comienzo = None
 
@@ -143,51 +147,6 @@ class Manejador:
         print('PERSONAL CREADO')
         return unAgente
 
-    def ordenarLista(self, lista):
-        orden = lista
-        orden.sort()
-        return orden
-
-    def listaATexto(self, lista):
-        text = ''
-        for i in lista:
-            text += '{}\n'.format(i)
-        return text
-
-    def docInvPorCarrera(self, carrera):
-        aux = self.__comienzo
-        lista = []
-        band = False
-        while aux is not None:
-            dato = aux.getDato()
-            if isinstance(dato, DocenteInvestigador):
-                if carrera.lower() == dato.getCarrera().lower():
-                    lista.append(dato)
-                    band = True
-            aux = aux.getSiguiente()
-        lista = self.ordenarLista(lista)
-        retorno = self.listaATexto(lista)
-        if not band:
-            retorno = None
-        return retorno
-
-    def contarPersonalPorArea(self, area):
-        aux = self.__comienzo
-        inv = 0
-        docInv = 0
-        while aux is not None:
-            dato = aux.getDato()
-            if isinstance(dato, Investigador):
-                if isinstance(dato, DocenteInvestigador):
-                    if area.lower() == dato.getArea().lower():
-                        docInv += 1
-                else:
-                    if area.lower() == dato.getArea().lower():
-                        inv += 1
-            aux = aux.getSiguiente()
-        text = 'Agentes en el área de investigación "{}"\nInvestigadores: {}\nDocentes investigadores: {}'.format(area, inv, docInv)
-        return text
-
     def calculoSueldo(self, agente):    # (aumento*base)/100
         base = agente.getSueldoBasico()
         aumento = 0
@@ -243,20 +202,89 @@ class Manejador:
             aux = aux.getSiguiente()
         return text
 
-    def mostrarPorCategoria(self, cat):
-        total = 0.0
-        text = ''
-        band = False
+    def gastosSueldoPorEmpleado(self, cuil):
+        aux = self.__comienzo
+        sueldo = 0
+        while aux is not None:
+            dato = aux.getDato()
+            if cuil == dato.getCuil():
+                sueldo = self.calculoSueldo(dato)
+            aux = aux.getSiguiente()
+        return sueldo
+
+    def modificarBasico(self, cuil, nuevoBasico):
+        aux = self.__comienzo
+        text = 'No se encontró el agente.'
+        while aux is not None:
+            dato = aux.getDato()
+            if cuil == dato.getCuil():
+                dato.setBasico(nuevoBasico)
+                text = 'Sueldo básico actualizado.'
+            aux = aux.getSiguiente()
+        return text
+
+    def modificarPorcentajePorCargo(self, cuil, nuevo):
+        text = 'No se encontró el agente.'
+        aux = self.__comienzo
+        while aux is not None:
+            dato = aux.getDato()
+            if isinstance(dato, Docente):
+                if cuil == dato.getCuil():
+                    dato.setPorcentaje(nuevo)
+                    text = 'Porcentaje por cargo actualizado.'
+            aux = aux.getSiguiente()
+        return text
+
+    def modificarPorcentajePorCategoria(self, cuil, nuevo):
+        text = 'No se encontró el agente.'
+        aux = self.__comienzo
+        while aux is not None:
+            dato = aux.getDato()
+            if isinstance(dato, DeApoyo):
+                if cuil == dato.getCuil():
+                    dato.setPorcentaje(nuevo)
+                    text = 'Porcentaje por categoria actualizado.'
+            aux = aux.getSiguiente()
+        return text
+
+    def modificarImporteExtra(self, cuil, nuevo):
+        text = 'No se encontró el agente.'
         aux = self.__comienzo
         while aux is not None:
             dato = aux.getDato()
             if isinstance(dato, DocenteInvestigador):
-                if cat.lower() == dato.getCategoria().lower():
-                    band = True
-                    text += 'Nombre y Apellido: {} {}. Importe extra: ${:.2f}\n'.format(dato.getNombre(), dato.getApellido(), dato.getImporteExtra())
-                    total += dato.getImporteExtra()
+                if cuil == dato.getCuil():
+                    dato.setImporteExtra(nuevo)
+                    text = 'Importe extra actualizado.'
             aux = aux.getSiguiente()
-        if band:
-            print('-- DOCENTES INVESTIGADORES DE CATEGORIA: {} --'.format(cat.upper()))
-            print(text)
-        return total
+        return text
+
+    def director(self, manejarDirector: IDirector):
+        opcion = input('1 - Modificar sueldo básico\n2 - Modificar porcentaje por cargo\n3 - Modificar porcentaje por categoría\n4 - Modificar importe extra\n0 - SALIR\nOpción: ')
+        while opcion != '0':
+            if opcion == '1':
+                cuil = input('CUIL: ')
+                nuevoBasico = float(input('Nuevo sueldo básico: $'))
+                print(manejarDirector.modificarBasico(cuil, nuevoBasico))
+            elif opcion == '2':
+                cuil = input('CUIL: ')
+                porcentajePorCargo = int(input('Nuevo porcentaje por cargo: '))
+                print(manejarDirector.modificarPorcentajePorCargo(cuil, porcentajePorCargo))
+            elif opcion == '3':
+                cuil = input('CUIL: ')
+                porcentajePorCategoria = int(input('Nuevo porcentaje por categoria: '))
+                print(manejarDirector.modificarPorcentajePorCategoria(cuil, porcentajePorCategoria))
+            elif opcion == '4':
+                cuil = input('CUIL: ')
+                importeExtra = int(input('Nuevo importe extra: '))
+                print(manejarDirector.modificarImporteExtra(cuil, importeExtra))
+
+    def tesorero(self, manejarTesorero: ITesorero):  # restringe los métodos de la interfaz
+        cuil = input('Ingrese el cuil de un agente del personal: ')
+        sueldo = manejarTesorero.gastosSueldoPorEmpleado(cuil)
+        if sueldo != 0:
+            print('Sueldo del empleado con CUIL {}: ${}'.format(cuil, sueldo))
+        else:
+            print('No se encontró el empleado con CUIL {}.'.format(cuil))
+        print('--------------------------------------------')
+        opcion = input('Ingresar:\n1 - SI\n2 - NO\nOpcion: ')
