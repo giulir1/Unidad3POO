@@ -1,0 +1,86 @@
+{
+    "__class__": "Manejador",
+    "aparatos": [
+        {
+            "__class__": "Docente",
+            "__atributos_": {
+                "cuil": "27-28033514-8",
+                "ape": "Castro",
+                "nom": "Emiliano",
+                "sueldo": 90000.0,
+                "antiguedad": 8,
+                "carrera": "Informatica",
+                "cargo": "Exclusivo",
+                "catedra": "Programacion"
+            }
+        },
+        {
+            "__class__": "DeApoyo",
+            "__atributos_": {
+                "cuil": "22-28036514-8",
+                "ape": "P\u00e9rez",
+                "nom": "Santiago",
+                "sueldo": 45000.0,
+                "antiguedad": 5,
+                "categoria": 1
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "__atributos_": {
+                "cuil": "42-28072000-8",
+                "ape": "Bravo",
+                "nom": "Benjamin",
+                "sueldo": 100000.0,
+                "antiguedad": 15,
+                "areaInvestigacion": "Ciencia de la computacion e inteligencia artificial",
+                "tipoInvestigacion": "Investigacion aplicada"
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "__atributos_": {
+                "cuil": "07-11036664-6",
+                "ape": "Rocha",
+                "nom": "Daniela",
+                "sueldo": 120000.0,
+                "antiguedad": 20,
+                "areaInvestigacion": "Ciencia de la computacion e inteligencia artificial",
+                "tipoInvestigacion": "Explicativa",
+                "carrera": "Informatica",
+                "cargo": "Simple",
+                "catedra": "Inteligencia artificial",
+                "categoriaIncentivos": "IV",
+                "importeExtra": 50000.0
+            }
+        },
+        {
+            "__class__": "DeApoyo",
+            "__atributos_": {
+                "cuil": "23-15945612-12",
+                "ape": "Martin",
+                "nom": "Gabriel",
+                "sueldo": 40000.0,
+                "antiguedad": 3,
+                "categoria": 19
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "__atributos_": {
+                "cuil": "23-42853374-8",
+                "ape": "Blanco",
+                "nom": "Walter",
+                "sueldo": 130000.0,
+                "antiguedad": 18,
+                "areaInvestigacion": "Ciencia de la computacion e inteligencia artificial",
+                "tipoInvestigacion": "Explicativa",
+                "carrera": "Informatica",
+                "cargo": "Exclusivo",
+                "catedra": "Bases de datos",
+                "categoriaIncentivos": "iv",
+                "importeExtra": 40000.0
+            }
+        }
+    ]
+}
