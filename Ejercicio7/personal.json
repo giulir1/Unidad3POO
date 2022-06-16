@@ -1,13 +1,13 @@
 {
     "__class__": "Manejador",
-    "personal": [
+    "aparatos": [
         {
             "__class__": "Docente",
-            "__atributos__": {
+            "__atributos_": {
                 "cuil": "27-28033514-8",
-                "apellido": "Castro",
-                "nombre": "Emiliano",
-                "sueldoBasico": 100000.0,
+                "ape": "Castro",
+                "nom": "Emiliano",
+                "sueldo": 90000.0,
                 "antiguedad": 8,
                 "carrera": "Informatica",
                 "cargo": "Exclusivo",
@@ -16,22 +16,22 @@
         },
         {
             "__class__": "DeApoyo",
-            "__atributos__": {
+            "__atributos_": {
                 "cuil": "22-28036514-8",
-                "apellido": "Pérez",
-                "nombre": "Santiago",
-                "sueldoBasico": 57000.0,
+                "ape": "P\u00e9rez",
+                "nom": "Santiago",
+                "sueldo": 45000.0,
                 "antiguedad": 5,
                 "categoria": 1
             }
         },
         {
             "__class__": "Investigador",
-            "__atributos__": {
+            "__atributos_": {
                 "cuil": "42-28072000-8",
-                "apellido": "Bravo",
-                "nombre": "Benjamín",
-                "sueldoBasico": 350000.0,
+                "ape": "Bravo",
+                "nom": "Benjam\u00edn",
+                "sueldo": 100000.0,
                 "antiguedad": 15,
                 "areaInvestigacion": "Ciencia de la computacion e inteligencia artificial",
                 "tipoInvestigacion": "Investigacion aplicada"
@@ -39,11 +39,11 @@
         },
         {
             "__class__": "DocenteInvestigador",
-            "__atributos__": {
+            "__atributos_": {
                 "cuil": "07-11036664-6",
-                "apellido": "Rocha",
-                "nombre": "Daniela",
-                "sueldoBasico": 500000.0,
+                "ape": "Rocha",
+                "nom": "Daniela",
+                "sueldo": 120000.0,
                 "antiguedad": 20,
                 "areaInvestigacion": "Ciencia de la computacion e inteligencia artificial",
                 "tipoInvestigacion": "Explicativa",
@@ -56,13 +56,30 @@
         },
         {
             "__class__": "DeApoyo",
-            "__atributos__": {
+            "__atributos_": {
                 "cuil": "23-15945612-12",
-                "apellido": "Martín",
-                "nombre": "Gabriel",
-                "sueldoBasico": 175000.0,
+                "ape": "Martin",
+                "nom": "Gabriel",
+                "sueldo": 40000.0,
                 "antiguedad": 3,
-                "categoria": 20
+                "categoria": 19
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "__atributos_": {
+                "cuil": "23-42853374-8",
+                "ape": "Blanco",
+                "nom": "Walter",
+                "sueldo": 130000.0,
+                "antiguedad": 18,
+                "areaInvestigacion": "Ciencia de la computacion e inteligencia artificial",
+                "tipoInvestigacion": "Explicativa",
+                "carrera": "Informatica",
+                "cargo": "Exclusivo",
+                "catedra": "Bases de datos",
+                "categoriaIncentivos": "iv",
+                "importeExtra": 40000.0
             }
         }
     ]

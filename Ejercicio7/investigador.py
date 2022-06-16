@@ -11,4 +11,25 @@ class Investigador(Personal):
         self.__tipoInvestigacion = tipoInvestigacion
 
     def __str__(self):
-        return '{} {} {}'.format(super().__str__(), self.__areaInvestigacion, self.__tipoInvestigacion)
+        return '{} Área de investigacion: {}. Tipo de investigación: {}'.format(super().__str__(), self.__areaInvestigacion, self.__tipoInvestigacion)
+
+    def getArea(self):
+        return self.__areaInvestigacion
+
+    def getTipo(self):
+        return self.__tipoInvestigacion
+
+    def toJSON(self):
+        diccionario = dict(
+            __class__=self.__class__.__name__,
+            __atributos_=dict(
+                cuil=super().getCuil(),
+                ape=super().getApellido(),
+                nom=super().getNombre(),
+                sueldo=super().getSueldoBasico(),
+                antiguedad=super().getAntiguedad(),
+                areaInvestigacion=self.__areaInvestigacion,
+                tipoInvestigacion=self.__tipoInvestigacion
+            )
+        )
+        return diccionario
